@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+.product-api-page {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background: #f5f6f8;
+    color: #17181c;
+}
+
+.product-api-container {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+}
+
+.product-api-header {
+    margin-bottom: 36px;
+}
+
+.product-api-header .eyebrow {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+
+    color: #6b7280;
+}
+
+.product-api-header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+.product-api-header p {
+    margin: 0;
+    color: #777b84;
+}
+
+.product-status {
+    margin-bottom: 20px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.api-product-card {
+    overflow: hidden;
+
+    border: 1px solid #e8e9ed;
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.api-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+.product-image-area {
+    width: 100%;
+    aspect-ratio: 1 / 0.8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f7f8fa;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.product-content {
+    padding: 18px;
+}
+
+.product-category {
+    display: block;
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    color: #90949d;
+}
+
+.product-title {
+    min-height: 48px;
+    margin: 0 0 14px;
+
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.product-price {
+    font-size: 18px;
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .product-api-page {
+        padding: 30px 14px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.loading-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 180px;
+
+    color: #6b7280;
+}
+
+.loading-box p {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.loading-spinner {
+    width: 32px;
+    height: 32px;
+
+    border: 3px solid #e5e7eb;
+    border-top-color: #111827;
+    border-radius: 50%;
+
+    animation: loading-spin 0.8s linear infinite;
+}
+
+@keyframes loading-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

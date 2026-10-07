@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+.user-page {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background: #f5f6f8;
+    color: #17181c;
+}
+
+.user-container {
+    width: min(960px, 100%);
+    margin: 0 auto;
+}
+
+.user-header {
+    margin-bottom: 30px;
+}
+
+.user-header .eyebrow {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+
+    color: #6b7280;
+}
+
+.user-header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+.user-header p {
+    margin: 0;
+    color: #777b84;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+
+    padding: 10px;
+
+    border: 1px solid #e2e4e9;
+    border-radius: 16px;
+
+    background: #ffffff;
+}
+
+.search-input {
+    flex: 1;
+
+    min-width: 0;
+    padding: 12px 14px;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 15px;
+}
+
+.search-button {
+    padding: 0 22px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: #111827;
+    color: #ffffff;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.user-status {
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #777b84;
+    font-size: 14px;
+}
+
+.user-result-header {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 12px 0 16px;
+
+    font-size: 14px;
+}
+
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 20px;
+
+    border: 1px solid #e7e9ee;
+    border-radius: 16px;
+
+    background: #ffffff;
+}
+
+.user-avatar {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #f0f1f3;
+    object-fit: cover;
+}
+
+.user-info {
+    min-width: 0;
+}
+
+.user-info h2 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+}
+
+.user-email {
+    overflow: hidden;
+
+    margin: 0 0 9px;
+
+    color: #70757e;
+
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user-meta {
+    display: flex;
+    gap: 8px;
+}
+
+.user-meta span {
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    background: #f4f5f7;
+
+    color: #626771;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+@media (max-width: 650px) {
+    .user-page {
+        padding: 30px 14px;
+    }
+
+    .user-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-button {
+        padding: 0 16px;
+    }
+}

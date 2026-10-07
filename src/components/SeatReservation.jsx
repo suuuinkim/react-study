@@ -45,10 +45,16 @@ function SeatReservation() {
         }
     }
     // TODO: 선택된 좌석 데이터
+    const selectedSeats = seats.filter((item) => {
+        return selectedSeatIds.includes(item.id)
+    })
 
     // TODO: 선택 좌석 개수
 
     // TODO: 총 결제 금액
+    const selectedSeatsPrice = selectedSeats.reduce((total, item) => {
+        return total + item.price
+    }, 0);
 
     return (
         <main className="seat-page">
@@ -103,23 +109,28 @@ function SeatReservation() {
 
                         <strong>
                             {/* TODO: 선택한 좌석 이름 */}
-                            선택된 좌석이 없습니다.
+                            {/*선택된 좌석이 없습니다.*/}
+                            {
+                                selectedSeats.length === 0 ? "선택된 좌석이 없습니다" : selectedSeats.map((item) => item.id).join(", ")
+                            }
+
                         </strong>
                     </div>
 
                     <div className="summary-row">
                         <span>선택 좌석</span>
-                        <strong>0석</strong>
+                        <strong>{selectedSeats.length}석</strong>
                     </div>
 
                     <div className="summary-row total">
                         <span>결제 금액</span>
-                        <strong>0원</strong>
+                        <strong>{selectedSeatsPrice.toLocaleString()}원</strong>
                     </div>
 
                     <button
                         type="button"
                         className="reservation-button"
+                        disabled={selectedSeats.length === 0}
                     >
                         예매하기
                     </button>

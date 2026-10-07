@@ -13,6 +13,8 @@ import ProductFavoritePractice from "./components/ProductFavoritePractice.jsx";
 import ProductCard from "./components/ProductCard.jsx";
 import CartPractice from "./components/CartPractice.jsx";
 import SeatReservation from "./components/SeatReservation.jsx";
+import ProductApiPractice from "./components/ProductApiPractice.jsx";
+import UserSearchPractice from "./components/UserSearchPractice.jsx";
 
 function App() {
 
@@ -31,7 +33,9 @@ function App() {
             {/*<ProductFavoritePractice/>*/}
             {/*<ProductCard/>*/}
             {/*<CartPractice/>*/}
-            <SeatReservation/>
+            {/*<SeatReservation/>*/}
+            {/*<ProductApiPractice/>*/}
+            <UserSearchPractice/>
         </main>
     );
 }
