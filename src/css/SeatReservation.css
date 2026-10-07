@@ -1,0 +1,325 @@
+* {
+    box-sizing: border-box;
+}
+
+.seat-page {
+    min-height: 100vh;
+    padding: 60px 20px;
+
+    background: #f5f6f8;
+    color: #17181c;
+}
+
+.seat-container {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    padding: 40px;
+
+    border-radius: 24px;
+    background: #ffffff;
+
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* header */
+
+.seat-header {
+    margin-bottom: 44px;
+}
+
+.seat-header .eyebrow {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+
+    color: #6b7280;
+}
+
+.seat-header h1 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+}
+
+.seat-header p {
+    margin: 0;
+
+    color: #777b84;
+}
+
+/* screen */
+
+.screen {
+    width: 75%;
+
+    margin: 0 auto 48px;
+    padding: 10px;
+
+    border-radius: 50% 50% 8px 8px;
+
+    background: #e9ebef;
+
+    text-align: center;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+
+    color: #858a94;
+}
+
+/* seat map */
+
+.seat-map {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(5, 52px);
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-bottom: 36px;
+}
+
+.seat {
+    width: 52px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #d8dbe2;
+    border-radius: 10px 10px 7px 7px;
+
+    background: #ffffff;
+    color: #17181c;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+            transform 0.2s,
+            border-color 0.2s,
+            background-color 0.2s,
+            color 0.2s;
+}
+
+.seat:hover {
+    border-color: #222;
+
+    transform: translateY(-2px);
+}
+
+/* 선택된 좌석 */
+
+.seat.is-selected {
+    border-color: #111827;
+
+    background: #111827;
+    color: #ffffff;
+}
+
+/* 예약된 좌석 */
+
+.seat:disabled {
+    border-color: #eceef1;
+
+    background: #eceef1;
+    color: #a9adb5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+/* legend */
+
+.seat-legend {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 24px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: #f7f8fa;
+
+    font-size: 13px;
+
+    color: #656a74;
+}
+
+.seat-legend span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.legend-seat {
+    width: 16px;
+    height: 14px;
+
+    display: inline-block;
+
+    border-radius: 4px;
+}
+
+.legend-seat.available {
+    border: 1px solid #cfd2d8;
+
+    background: #ffffff;
+}
+
+.legend-seat.selected {
+    background: #111827;
+}
+
+.legend-seat.reserved {
+    background: #dfe1e5;
+}
+
+/* reservation summary */
+
+.reservation-summary {
+    margin-top: 28px;
+    padding-top: 28px;
+
+    border-top: 1px solid #eceef2;
+}
+
+.selected-seat-area {
+    margin-bottom: 24px;
+}
+
+.selected-seat-area span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    color: #7a7f89;
+}
+
+.selected-seat-area strong {
+    font-size: 17px;
+}
+
+.summary-row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 9px 0;
+
+    font-size: 14px;
+}
+
+.summary-row.total {
+    margin-top: 8px;
+    padding-top: 18px;
+
+    border-top: 1px solid #eceef2;
+
+    font-size: 18px;
+}
+
+/* reservation button */
+
+.reservation-button {
+    width: 100%;
+
+    margin-top: 22px;
+    padding: 16px;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: #111827;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.reservation-button:hover {
+    opacity: 0.9;
+}
+
+.reservation-button:disabled {
+    background: #d5d8de;
+    color: #999ea8;
+
+    cursor: not-allowed;
+
+    opacity: 1;
+}
+
+/* mobile */
+
+@media (max-width: 600px) {
+    .seat-page {
+        padding: 24px 14px;
+    }
+
+    .seat-container {
+        padding: 26px 18px;
+    }
+
+    .seat-header {
+        margin-bottom: 34px;
+    }
+
+    .seat-header h1 {
+        font-size: 26px;
+    }
+
+    .screen {
+        width: 85%;
+
+        margin-bottom: 36px;
+    }
+
+    .seat-map {
+        grid-template-columns: repeat(5, 44px);
+
+        gap: 9px;
+    }
+
+    .seat {
+        width: 44px;
+        height: 42px;
+
+        font-size: 12px;
+    }
+
+    .seat-legend {
+        gap: 12px;
+
+        padding: 14px 10px;
+
+        font-size: 11px;
+    }
+
+    .legend-seat {
+        width: 14px;
+        height: 12px;
+    }
+}

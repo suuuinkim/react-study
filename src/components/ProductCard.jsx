@@ -1,43 +1,25 @@
-function ProductCard(props) {
-    // 구조분해할당
-    const {category, name, price, onSelect} = props;
-
+function ProductCard({name, price, favorite, id, onHandleToggleFavorite}) {
     return (
-        <article className="recommend-card">
-            <div className="recommend-image">
-                <span>PRODUCT</span>
-            </div>
-
-            <div className="recommend-info">
-        <span className="recommend-category">
-          {/* TODO: 상품 카테고리 */}
-            {category}
-        </span>
-
-                <h3>
-                    {/* TODO: 상품 이름 */}
+        <article className="product-card">
+            <div className="product-info">
+                <h2 className="product-name">
                     {name}
-                </h3>
+                </h2>
 
-                <strong>
-                    {/* TODO: 상품 가격 */}
-                    {price.toLocaleString()}
-                </strong>
-
-                <button
-                    className="select-product-button"
-                    type="button"
-                    onClick={() => {
-                        onSelect({
-                            category, name, price
-                        })
-                    }}
-                >
-                    선택하기
-                </button>
+                <p className="product-price">
+                    {price.toLocaleString()}원
+                </p>
             </div>
+
+            <button
+                type="button"
+                className={favorite ? "favorite-button active" : "favorite-button"}
+                onClick={() => {onHandleToggleFavorite(id)}}
+            >
+                {favorite ? '♥': '♡'}
+            </button>
         </article>
-    );
+    )
 }
 
-export default ProductCard;
+export default ProductCard
